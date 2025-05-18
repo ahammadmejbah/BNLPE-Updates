@@ -1,0 +1,73 @@
+``` python
+
+
+@echo off
+cd /d %~dp0
+mkdir agentic_docai
+cd agentic_docai
+
+:: Root files
+type nul > manage.py
+type nul > requirements.txt
+type nul > package.json
+type nul > postcss.config.js
+type nul > tailwind.config.js
+
+:: Django Core
+mkdir agentic_docai\templates\includes
+mkdir static\css
+mkdir static\js
+cd agentic_docai
+type nul > __init__.py
+type nul > settings.py
+type nul > urls.py
+type nul > wsgi.py
+type nul > asgi.py
+cd ..
+
+:: Templates
+type nul > templates\base.html
+type nul > templates\includes\navbar.html
+type nul > templates\includes\footer.html
+type nul > templates\interface\home.html
+type nul > templates\interface\modules.html
+type nul > templates\interface\settings_panel.html
+type nul > templates\print\summary_report.html
+type nul > templates\print\layout_preview.html
+type nul > templates\print\key_extractions.html
+
+:: Static
+type nul > static\css\tailwind.css
+type nul > static\js\main.js
+
+:: Core logic
+mkdir core
+type nul > core\config.yaml
+type nul > core\dispatcher.py
+type nul > core\engine.py
+type nul > core\orchestrator.py
+type nul > core\pipeline.py
+type nul > core\routing_logic.py
+
+:: Modules
+for %%d in (preprocessing segmentation recognition correction rules ocr_math_rules datasets\training\images datasets\training\audio datasets\training\documents\invoices datasets\training\documents\transcripts datasets\training\documents\certificates datasets\training\documents\contracts datasets\training\labels datasets\evaluation\test_set_v1 datasets\evaluation\benchmarks transformer\architecture transformer\adapters transformer\prompt_learning transformer\training transformer\reward_modeling llm benchmark_tests agent graph_reasoning\algorithms graph_reasoning\environments imitation_learning compression\alpha_pruning compression\pruning_strategies bridge interface_launcher simulation knowledge governance security evaluation\metrics evaluation\reports evaluation\test_scenarios testing analytics\usage_logs analytics\performance analytics\visualizations apps\voice apps\documents apps\tables apps\summary apps\export apps\retriever apps\debug docs) do mkdir %%d
+
+:: Sample files (you can expand later)
+echo # Architecture > docs\architecture.md
+echo # Usage > docs\usage_guide.md
+echo # APIs > docs\module_apis.md
+echo # Roadmap > docs\roadmap.md
+
+:: Sample scripts
+type nul > testing\test_llm_pipeline.py
+type nul > testing\test_agent_tasks.py
+type nul > testing\test_ocr_math_rules.py
+
+echo All folders and files have been created successfully.
+
+
+
+
+
+
+```
